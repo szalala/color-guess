@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
 var numSquares = (6);
 var colors = generateRandomColors(numSquares);
 var squares = document.querySelectorAll('.square');
@@ -137,4 +137,4 @@ function randomColor() {
 
 
 
-// });
+});
