@@ -1,5 +1,7 @@
 body {
 	background-color: #5a6794;
+	margin: 0;
+	font-family: 'Libre Baskerville', serif;
 }
 
 .square {
@@ -8,13 +10,28 @@ body {
 	padding-bottom: 30%;
 	margin: 1.66%;
 	float: left;
+	border-radius: 20%;
+	transition: background .4s;
+	-webkit-transition: background .4s;
+	-moz-transition: background .4s;
 }
 
 #container {
 	max-width: 700px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
+h1 {
+	color: white;
+	text-align: center;
+	background-color: steelblue;
+	margin: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding: 20px 0;
+	line-height: 1.4;
+	letter-spacing: .5rem;
+}
 #stripe {
 	background-color: #fff;
 	height: 30px;
@@ -22,5 +39,34 @@ body {
 }
 
 .selected {
-	background-color: blue;
+	background-color: steelblue;
+	color: #fff;
+}
+#colorDisplay {
+	font-size: 150%;
+}
+#message {
+	display: inline-block;
+	width: 20%;
+}
+button {
+	border: none;
+	background: none;
+	height: 100%;
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
+	outline: none;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+
+}
+
+button:hover {
+	background-color: steelblue;
+	color: #fff;
 }

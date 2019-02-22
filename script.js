@@ -1,29 +1,66 @@
-document.addEventListener("DOMContentLoaded", function() {
-
-var colors = generateRandomColors(6);
+// document.addEventListener("DOMContentLoaded", function() {
+var numSquares = (6);
+var colors = generateRandomColors(numSquares);
 var squares = document.querySelectorAll('.square');
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.getElementById("message");
 var h1 = document.querySelector("h1");
 var resetButton = document.getElementById("reset");
-
+var easyBtn = document.getElementById("easyBtn");
+var hardBtn = document.getElementById("hardBtn");
 colorDisplay.textContent = pickedColor;
+
+easyBtn.addEventListener("click", function() {
+	easyBtn.classList.add("selected");
+	hardBtn.classList.remove("selected");
+	numSquares = (3);
+	colors = generateRandomColors(numSquares);
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+
+	for(var i = 0; i < squares.length; i++) {
+		if(colors[i]) { 
+		squares[i].style.background = colors[i];
+	} else {
+		squares[i].style.display = "none";
+	}
+}
+});
+
+
+hardBtn.addEventListener("click", function() {
+	hardBtn.classList.add("selected");
+	easyBtn.classList.remove("selected");
+	numSquares = 6;
+	colors = generateRandomColors(numSquares);
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+
+	for(var i = 0; i < squares.length; i++) {
+		squares[i].style.background = colors[i];
+		squares[i].style.display = "block";
+	
+}
+});
+
 
 //button resetu kolorów
 resetButton.addEventListener("click", function() {
 	//generate new colors
-	colors = generateRandomColors(6);
+	colors = generateRandomColors(numSquares);
 	//pick new colors
 	pickedColor = pickColor();
 	//display color match picked color
 	colorDisplay.textContent = pickedColor;
+	this.textContent = "New colors";
 	//change colors of squares
 	for(var i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = colors[i];
 	};
-	h1.style.backgroundColor = "#5a6794";
-	messageDisplay.textContent = " "
+	h1.style.backgroundColor = "steelblue";
+	messageDisplay.textContent = " ";
+
 });
 
 
@@ -100,4 +137,4 @@ function randomColor() {
 
 
 
-});
+// });
